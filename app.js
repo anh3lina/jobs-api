@@ -8,7 +8,6 @@ import connectDB from './db/connect.js'
 import authenticateUser from './middleware/authentication.js'
 import helmet from 'helmet'
 import cors from 'cors'
-import xss from 'xss-clean'
 import rateLimiter from 'express-rate-limit'
 
 const app = express();
@@ -21,7 +20,6 @@ app.use(rateLimiter({
 }))
 app.use(helmet())
 app.use(cors())
-app.use(xss())
 
 app.use(express.json());
 
